@@ -1,4 +1,4 @@
-import logo from "../../Images/rc_com.png"
+import logo from "../../Images/favicon.png"
 import "./navbar.css"
 import { Link } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
@@ -37,13 +37,15 @@ const Navbar = () => {
     <nav className={navbar ? "navbar" : "navbar_scroll"}>
       <div className="community_logo">
         <a href="#">
-          <img
-            className="community_img"
-            src={logo}
-            height="90"
-            width="90"
-            alt="logo"
-          />
+          <div style={{ display: "flex" }}>
+            <img
+              className="community_img"
+              src={logo}
+              width={65}
+              height={65}
+              alt="logo"
+            />
+          </div>
         </a>
 
         {document.body.classList.contains("hideOverflow") && (
@@ -67,7 +69,7 @@ const Navbar = () => {
               <li onClick={removeOverflow}>Contact Us</li>
             </a>
 
-            <div className="dropdown">
+            {/* <div className="dropdown">
               <a href="#">
                 <li>
                   More <i class="fa fa-caret-down"></i>
@@ -84,7 +86,7 @@ const Navbar = () => {
                   <li>Achievements</li>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -122,7 +124,7 @@ const Navbar = () => {
                 <li onClick={removeOverflow}>Contact Us</li>
               </a>
 
-              <div className="dropdown">
+              {/* <div className="dropdown">
                 <a href="#">
                   <li>
                     More <i class="fa fa-caret-down"></i>
@@ -139,14 +141,14 @@ const Navbar = () => {
                     <li>Achievements</li>
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
           <div className="right-menu">
             <div className="mobile-theme"><ThemeButton /></div>
             <Profile handleOverflow={removeOverflow} />
           </div>
-          
+
         </div>
       </ul>
     </nav>
